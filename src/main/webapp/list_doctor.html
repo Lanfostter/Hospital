@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="@{/doctor/list}" method="get">
+		<table class="table table-striped">
+			<thead class="table-dark">
+				<tr>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Gender</th>
+					<th>Birthday</th>
+					<th>Seniority</th>
+					<th>Id Number</th>
+					<th>Level</th>
+					<th>Phone</th>
+					<th>Address</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="d : ${doctors}">
+					<td colspan="1" class="" th:text="${d.id}"></td>
+					<td colspan="1" th:text="${d.name}"></td>
+					<td colspan="1" th:text="${d.gender}"></td>
+					<td colspan="1" th:text="${d.birthday}"></td>
+					<td colspan="1" th:text="${d.seniority}"></td>
+					<td colspan="1" th:text="${d.idCard?.idnumber}"></td>
+					<td colspan="1" th:text="${d.level}"></td>
+					<td colspan="1" th:text="${d.phone}"></td>
+					<td colspan="1" th:text="${d.address}"></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</body>
+</html>
